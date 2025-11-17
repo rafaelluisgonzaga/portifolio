@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agente de IA | Projeto 21-10-2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="../../assets/faviconDev.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" />
+  <link href="../../css/styles.css" rel="stylesheet" />
+
+  <style>
+    .btn-custom-black {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+    .btn-custom-black:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    .btn-group-center {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+  <!-- HERO SECTION -->
+  <section style="background-color: rgb(44, 28, 24); color: white;" class="text-center py-5">
+    <div class="container px-4 px-lg-5">
+      <h1 class="fw-bold">Agente de Inteligência Artificial</h1>
+      <p class="lead">Sistema modular automatizado para tarefas inteligentes e processamento contextual</p>
+    </div>
+  </section>
+
+  <!-- IMAGE + BUTTON -->
+  <section class="py-4 text-center">
+    <img src="https://github.com/rafaelluisgonzaga/21-10-2025_Agente_de_IA/blob/main/rafaelluisgonzaga.png?raw=true" class="img-fluid rounded shadow" alt="Agente IA" style="max-width: 500px;">
+    <div class="btn-group-center">
+      <a href="https://github.com/rafaelluisgonzaga/21-10-2025_Agente_de_IA" target="_blank" class="btn-custom-black">
+        <i class="bi bi-github me-2"></i>Ver no GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center">Sobre o Projeto</h2>
+      <hr class="divider" />
+
+      <p class="text-muted text-justify" style="text-indent: 30px;">
+        🤖 Este projeto apresenta um <strong>Agente de IA integrado ao N8N e Google Sheets</strong>, capaz de registrar conversas, manter memória contextual, acessar ferramentas externas (RAGs) e responder de forma autônoma via um chatbot público. Todo o fluxo foi criado utilizando a automação visual do N8N, com recursos avançados como cálculos, consultas à Wikipedia e armazenamento estruturado em planilhas.
+      </p>
+
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <h4>🔨 O que o Agente Faz</h4>
+          <ul>
+            <li>💬 Recebe mensagens via webhook público do N8N</li>
+            <li>📄 Registra cada mensagem no Google Sheets</li>
+            <li>🧠 Utiliza memória para manter contexto entre mensagens</li>
+            <li>📚 Possui RAGs como Wikipedia e Calculadora</li>
+            <li>🤖 Responde usando o modelo Google Gemini</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h4>💻 Tecnologias Utilizadas</h4>
+          <ul>
+            <li>⚙️ N8N (via Docker)</li>
+            <li>🧠 Google Gemini Chat Model</li>
+            <li>📊 Google Sheets API</li>
+            <li>🔗 Webhooks públicos</li>
+            <li>📘 RAG (Wikipedia + Calculator)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h4>🧠 Arquitetura do Agente</h4>
+        <ul>
+          <li><strong>Modelo:</strong> Gemini Chat Model</li>
+          <li><strong>Memória:</strong> Nó Simple Memory usando Session ID</li>
+          <li><strong>Prompt Base:</strong> Define personalidade e estilo do agente</li>
+          <li><strong>Ferramentas:</strong> Wikipedia · Calculator</li>
+          <li><strong>Logs:</strong> Conversas armazenadas em Google Sheets</li>
+        </ul>
+      </div>
+
+      <div class="mt-5">
+        <h4>📝 Etapas do Workflow</h4>
+        <ol>
+          <li>🔔 <strong>When Chat Message Received</strong>: recebe mensagens via webhook</li>
+          <li>🧩 <strong>Edit Fields</strong>: filtra sessionId e mensagem</li>
+          <li>📄 <strong>Google Sheets – Append Row</strong>: grava idConversa e mensagem</li>
+          <li>🤖 <strong>AI Agent</strong>: processa com Gemini + memória + RAG</li>
+        </ol>
+      </div>
+
+      <div class="mt-4">
+        <p class="text-muted">
+          <strong>Como executar:</strong> Instale o N8N com Docker, configure o Google Cloud para acesso às APIs de Sheets/Drive, importe o workflow do repositório e acesse o agente via URL pública do webhook.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK BUTTON -->
+  <div class="btn-group-center mb-4">
+    <a href="../../inteligencia_artificial.html" class="btn-custom-black">
+      ← Voltar para Projetos com Inteligência Artificial
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background-color: rgb(44, 28, 24);" class="py-5">
+    <div class="container px-4 px-lg-5">
+      <div class="small text-center text-white">
+        Copyright &copy; 2025 - <strong>rafaelluisgonzaga</strong>
+        <span style="margin: 0 8px;">|</span>
+        <a href="https://themewagon.com/" target="_blank">
+          <img src="../../assets/img/portfolio/icons/theme_white.png" alt="Themewagon" style="max-width: 100px; vertical-align: middle; margin-left: 10px;">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
